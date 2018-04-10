@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<a href="{% url 'listado_add' %}">Agregar todo</a>
+	<ul>
+		{% for app1 in listado %}
+			<li>
+				{{ app1.description }}
+				-
+				{% if not app1.is_done %}
+					<a href="{% url 'listado_done' app1.id %}">Marcar como teminada</a>
+				{% else %}
+					<span>Done!</span>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

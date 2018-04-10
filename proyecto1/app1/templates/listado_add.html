@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Agregar tarea
+{% endblock %}
+
+{% block heading %}
+	Agregar tarea
+{% endblock %}
+
+{% block body %}
+	<form action="{% url 'listado_add' %}" method="post">
+		{% csrf_token %}
+		<label for"description">Descripcion</label>
+		<input type="text" name="description" id="description">
+		<input type="submit" name="submit" value="agregar">
+	</form>
+
+{% endblock %}
